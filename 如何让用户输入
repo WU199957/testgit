@@ -1,0 +1,28 @@
+import java.util.Scanner;//1
+//答案入力
+//第一步：import java.util.Scanner;
+//第二步：Scanner 任意 = new Scanner(System.in);创建输入工具
+//第三步：int 任意 = scanner.nextInt()；等待用户在键盘上输入一个整数
+
+
+public class Practice {
+    public static void main(String[] args) {
+        //第二步：这行代码的作用是创建了一个用于从键盘读取用户输入的工具，我们将其存储在名为 scanner 的变量中
+        Scanner scanner = new Scanner(System.in);
+        for (int i = 1; i <= 10; i++) {
+        int num1 = (int) (Math.random() * 99) + 1;
+        int num2 = (int) (Math.random() * 99) + 1;
+        int out = num1 + num2;
+
+        System.out.print(num1 + " + " + num2 + " = ");
+        //第三步：整行代码的作用是，它会等待用户在键盘上输入一个整数，然后将这个整数值存储在 input 变量中，
+            int input = scanner.nextInt();//int input = Scanner.nextInt();?哪里出错了
+
+            if (out == input) {
+                System.out.println("正解");
+            } else if (out != input) {
+                System.out.println("不正解");
+            }
+        }
+    }
+}
