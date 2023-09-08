@@ -1,0 +1,24 @@
+import java.text.DecimalFormat;// DecimalFormat クラスをインポート
+//要点：1.DecimalFormat クラスimport 2.指定小数点 3.文字列转换
+public class Bmi {
+    public static void main(String[] args) {
+        double height=Double.parseDouble(args[0]);
+        double weight=Double.parseDouble(args[1]);
+
+        double out=weight/(height*height);
+      // 数値を小数点以下 5 桁でフォーマットするための DecimalFormat を作成
+        DecimalFormat decimalFormat = new DecimalFormat("#.00000");
+        // 数値をフォーマットして文字列に変換
+        String formattedNumber = decimalFormat.format(out);
+
+        if(out < 18.5) {
+            System.out.println("太瘦了" + "(BMI:" + formattedNumber + ")");
+        }else if (out>=18.5 &&out<25) {
+            System.out.println("标准" + "(BMI:" + formattedNumber + ")");
+        }else if (out<30 &&out>=30) {
+            System.out.println("太り気味" + "(BMI:" + formattedNumber + ")");
+        }else if (out>30){
+            System.out.println("太すぎる"+"(BMI:"+formattedNumber+")");
+        }
+    }
+}
