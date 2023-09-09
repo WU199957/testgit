@@ -16,3 +16,9 @@ numbers[1] = 55; // 配列の2番目の要素に値を代入
 
 //配列の長さ（要素数）の取得:
 int length = numbers.length; // 配列 numbers の長さを取得←这个变成了int length的数值
+
+//for文使って配列を作成
+for(int i=0;i<numbers.length;i++){
+}
+//输出配列数值
+system.out.println(numbers[i])
