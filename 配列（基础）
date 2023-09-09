@@ -1,0 +1,18 @@
+//1配列の作成：step1宣言 step2初期化:
+配列を宣言するには、データ型（int、double、Stringなど）を指定し、配列名を指定します。初期化は、配列の要素数を指定し、メモリを確保する作業です。
+int[] numbers = new int[5]; // 5つの整数を格納できる配列
+int[] numbers = {1, 2, 3, 4, 5}; //宣言と初期化を同時に行う
+for (int i = 0; i < numbers.length; i++) {
+    numbers[i] = i * 2; // 要素を計算して初期化
+}
+
+//2配列の要素へのアクセス:!从0开始
+int firstNumber = numbers[0]; // 配列の最初の要素にアクセス
+int secondNumber = numbers[1]; // 配列の2番目の要素にアクセス
+
+//3配列の要素の代入:
+numbers[0] = 42; // 配列の最初の要素に値を代入
+numbers[1] = 55; // 配列の2番目の要素に値を代入
+
+//配列の長さ（要素数）の取得:
+int length = numbers.length; // 配列 numbers の長さを取得←这个变成了int length的数值
