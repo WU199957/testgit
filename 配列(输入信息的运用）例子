@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class Practiceplus {
+    public static void main(String[] args) {
+        // 创建一个Scanner对象来读取用户输入
+        Scanner scanner = new Scanner(System.in);
+
+        // 创建数组来存储随机数字和用户输入
+        int[] num1 = new int[10]; // 存储随机数的数组
+        int[] num2 = new int[10]; // 存储随机数的数组
+        int[] input = new int[10]; // 存储用户输入的数组
+
+        // 生成10对随机数并获取用户输入
+        for (int i = 0; i < 10; i++) {
+            num1[i] = (int) (Math.random() * 99) + 1; // 生成1到99之间的随机数
+            num2[i] = (int) (Math.random() * 99) + 1; // 生成1到99之间的随机数
+            System.out.print(num1[i] + " + " + num2[i] + " = "); // 显示加法问题
+            input[i] = scanner.nextInt(); // 读取用户输入并将其存储在“input”数组中
+        }
+
+        // 显示答案
+        System.out.println("答えは");
+        for (int i = 0; i < 10; i++) {
+            if (num1[i] + num2[i] == input[i]) {
+                System.out.println(num1[i] + " + " + num2[i] + " = " + input[i] + "，回答正确"); // 正确答案
+            } else {
+                System.out.println(num1[i] + " + " + num2[i] + " = " + (num1[i] + num2[i]) + "，回答错误"); // 不正确的答案
+            }
+        }
+    }
+}
