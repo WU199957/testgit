@@ -1,0 +1,7 @@
+//1.パッケージの作成:
+package Calcapp.main;
+//2.パッケージ内のクラスの定義:
+public class Clac{
+}
+//import パッゲージ名.クラス名
+//
