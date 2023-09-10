@@ -1,0 +1,34 @@
+//1.メソッドの定義:メソッドは、クラス内で定義されます。
+public class MyClass {
+    public void Hello() {//helloのメソッドを定義
+    }
+    }
+//2.メソッドの呼び出し
+hello();//メソッド名（引数リスト）
+
+//3.メソッド-引数的利用
+//什么因数都不带入←メソッド名（）　多个引数带入←メソッド名（值，值。。。）
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("out");
+        hello("陈")；//hello メソッドを呼び出しています。このメソッドに文字列 "陈" を引数として渡しています
+        hello("吴");
+        System.out.println("呼叫完毕");
+        }
+        public static void hello(String name){ //hello メソッドが定義。このメソッドは文字列型の name という引数を受け取り
+        System.out.println("Hello"+name);
+    }
+}
+//4.メソッドの戻り值の利用
+メソッドが返す値をキャッチして他の部分で使用すること
+public class Main {
+    public static int add(int x,int y){//step１：定义add这个メソッド、赋予两个因素
+        int ans=x+y;
+        return ans;//add 方法将两个整数相加并返回结果。
+    }
+
+    public static void main(String[] args) {
+        int ans=add(100,200);//这一行调用了上面定义的 add 方法，传递了参数 100 和 200 给方法，并将返回值（计算结果）存储在名为 ans 的整数变量中。
+        System.out.println(ans);
+    }
+}
