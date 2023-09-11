@@ -3,5 +3,30 @@ package Calcapp.main;
 //2.パッケージ内のクラスの定義:
 public class Clac{
 }
-//import パッゲージ名.クラス名
-//
+
+//例＊
+// パッケージ宣言（パッケージ名 "p"）
+package p;
+// クラスの定義（クラス名 "c"）
+public class c {
+    // メソッドの定義（メソッド名 "m"）
+    public static void m() {
+        System.out.println("Hello from method m in class c in package p!");
+    }
+
+    // メインメソッド
+    public static void main(String[] args) {
+        // メソッド "m" を呼び出す
+        m();
+    }
+}
+//import パッゲージ名.クラス名，下面是例子
+// 別のクラスから "p" パッケージ内の "c" クラスをインポート
+import p.c;
+
+public class AnotherClass {
+    public static void main(String[] args) {
+        // "p.c" クラスの "m" メソッドを呼び出す
+        c.m();
+    }
+}
