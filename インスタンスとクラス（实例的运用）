@@ -1,0 +1,61 @@
+//1,インスタンス
+// 定义一个类
+class Dog {
+    String name;
+    
+    // 构造方法
+    public Dog(String dogName) {
+        name = dogName;
+    }
+    
+    // 方法
+    public void bark() {
+        System.out.println(name + "在叫！");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // 创建一个 Dog 类的实例（インスタンス）
+        Dog myDog = new Dog("小白");
+// class名字：Dog 变数名字：mydog 
+
+        // 使用实例的方法
+        myDog.bark();//class名字+点+メソッド名字（bark）
+    }
+}
+
+//2.コンストラクタ←インスタンスを生成する際に呼び出される特殊なメソッドです。
+public class MyClass {
+    private int value;
+
+    // デフォルトコンストラクタ
+    public MyClass() {
+        value = 0;
+    }
+
+    // パラメータ付きコンストラクタ
+    public MyClass(int initialValue) {
+        value = initialValue;
+    }
+
+    // メソッド
+    public int getValue() {
+        return value;
+    }
+
+    public static void main(String[] args) {
+        // デフォルトコンストラクタを使用してインスタンスを生成
+        MyClass obj1 = new MyClass();
+
+        // パラメータ付きコンストラクタを使用してインスタンスを生成
+        MyClass obj2 = new MyClass(42);
+
+        System.out.println("obj1の値: " + obj1.getValue()); // 0
+        System.out.println("obj2の値: " + obj2.getValue()); // 42
+    }
+}
+
+
+
+
