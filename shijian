@@ -1,0 +1,109 @@
+package com.liuyi.rad.endpoint.admin.system;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class StockSystemDemo {
+    public static void main(String[] args) {
+        List<Stock> stocks = readStocksFromCSV("G:\\output.csv");
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            System.out.println("欢迎来到模拟证券系统");
+            System.out.println("1. 股票信息展示");
+            System.out.println("2. 股票信息登录");
+            System.out.println("9. 退出程序");
+            System.out.print("请选择操作：");
+            int choice = scanner.nextInt();
+            switch (choice) {
+                case 1:
+                    // 展示股票信息
+                    System.out.println("|===============================================================|");
+                    for (int i = 0; i < stocks.size(); i++) {
+                        System.out.printf("| %-3s | %-25s | %-8s | %-15s | %n",
+                                stocks.get(i).getCode().length() > 20 ?  stocks.get(i).getCode().substring(0, 10) + "..." :  stocks.get(i).getCode(),
+                                stocks.get(i).getProductName().length() > 20 ?  stocks.get(i).getProductName().substring(0, 10) + "..." :  stocks.get(i).getProductName(),
+                                stocks.get(i).getMarket().length() > 20 ?  stocks.get(i).getMarket().substring(0, 10) + "..." :  stocks.get(i).getMarket(),
+                                stocks.get(i).getSharesIssued().length() > 20 ?  stocks.get(i).getSharesIssued().substring(0, 10) + "..." :  stocks.get(i).getSharesIssued()) ;
+                        if(i == 0){
+                            System.out.println("|------+---------------------------+----------+-----------------|");
+                        }
+                    }
+                    System.out.println("=================================================================");
+                    break;
+                case 2:
+                    // 股票信息登录
+                    System.out.print("请输入用户名：");
+                    String username = scanner.next();
+                    System.out.print("请输入密码：");
+                    String password = scanner.next();
+                    System.out.println("登录成功，欢迎 " + username + "！");
+                    break;
+                case 9:
+                    // 退出程序
+                    System.out.println("感谢使用模拟证券系统，再见！");
+                    scanner.close();
+                    return;
+                default:
+                    System.out.println("无效的选择，请重新选择！");
+                    break;
+            }
+        }
+    }
+
+    private static List<Stock> readStocksFromCSV(String filename) {
+        List<Stock> stocks = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] values = line.split("\t");
+                if (values.length == 4) {
+                    String code = values[0];
+                    String productName = values[1];
+                    String market = values[2];
+                    String sharesIssued = values[3];
+                    stocks.add(new Stock(code, productName, market, sharesIssued));
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return stocks;
+    }
+
+
+
+}
+
+class Stock {
+    private String code;
+    private String productName;
+    private String market;
+    private String sharesIssued;
+
+    public Stock(String code, String productName, String market, String sharesIssued) {
+        this.code = code;
+        this.productName = productName;
+        this.market = market;
+        this.sharesIssued = sharesIssued;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public String getMarket() {
+        return market;
+    }
+
+    public String getSharesIssued() {
+        return sharesIssued;
+    }
+}
