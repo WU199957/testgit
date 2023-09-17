@@ -1,0 +1,23 @@
+//メソッド：参数和返回值
+//1.定义：修饰符➕返回值类型 方法名称（参数类型 参数名称...){
+//方法体
+//return 返回值；
+//}
+public static int sum(int a,int b){
+int result=a+b;
+return result;
+}
+//2调用：
+//单独调用：方法名称（参数）
+//打印调用：System.out.println(方法名称（参数)）
+//付值调用：数据名称 变量名=方法名称（参数）
+sum(10.20)
+System.out.println(sum(10,20));
+int number=sum（10，20）；
+//3.有无返回值区别
+//public static int sum(int a,int b){
+int result=a+b；
+return result；
+public static void main(String[] args){
+int sum//
+
